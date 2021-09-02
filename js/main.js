@@ -1,0 +1,3 @@
+$('.collapse').collapse()
+AOS.init();
+

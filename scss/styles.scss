@@ -2,85 +2,126 @@ $Pink-color: #ff35b1;
 $PinkDark-color: #c11086;
 $GrayLigth-color: #f6f6f6;
 $GrayDark-color: #282828;
+$Green-color: #cbffbd;
 
 $Header-font: cooper-black-std, serif;
 $Content-font: nimbus-sans, sans-serif;
 
 $Header-Size:4rem;
 $Content-Size:1rem;
+$Subheader-Size:2rem;
+@media only screen and (max-width: 1024px)  {  
+    $Header-Size:2.5rem;
+    $Content-Size:0.9rem;
+    $Subheader-Size:1.8rem;
+} 
+
 
 
 *{	margin: 0;
 	padding: 0;
-	border: 0;}
+	border: 0;
+    user-select: none;}
 
     a {
         color: #000;
         text-decoration: none;
     }
 
+    .mouse {
+        width: 50px;
+        height: 90px;
+        border: 3px solid $GrayLigth-color;
+        border-radius: 60px;
+        position:absolute;
+        bottom: 50px;
+        right: 50%;
+        @media only screen and (max-width: 1024px)  {  
+            display: none;
+        } 
 
-.banner, .about{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        &::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $GrayLigth-color;
+            border-radius: 50%;
+            opacity: 1;
+            animation: wheel 2s infinite;
+            -webkit-animation: wheel 2s infinite;
+        }
+    }
+    
+    @keyframes wheel {
+        to {
+            opacity: 0;
+            top: 60px;
+        }
+    }
+    
+    @-webkit-keyframes wheel {
+        to {
+            opacity: 0;
+            top: 60px;
+        }
+    }
+    html{
+     overflow-x:hidden;
+     overflow-y:visible;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+    
+
 .banner{
     background-color: $Pink-color;
 }
-.about{
+.about, .experience{
     background-color: $GrayLigth-color;
 }
 
-.nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navbar{
-    width: 80%;
-    height: 80px;
-    background-color: white;
-    border-radius: 20px;
-    position:fixed;
-    top: 20px;
-    margin: 0px auto;
-
-    &_items{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        justify-content: space-around;
-        &--item{
-            list-style: none;
-            color: $GrayDark-color;
-            font-family: $Header-font;
-            color: $Pink-color;
-        }
-    }
-}
-
 .banner{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        
+    background-color: $Pink-color;
+    height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+    grid-template-rows:repeat(3, auto);
+    padding: 100px 170px 0px 170px ;
+    @media only screen and (max-width: 1024px)  {  
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows:repeat(2, auto);
+        padding: 50px 50px 0px 50px ;
+    }
     &_content{
-        padding: 100px 0px;
-        width: 50%;
+        grid-column: 1 / 6;
+        grid-row: 1 / 3;
+        @media only screen and (max-width: 1024px)  {  
+            grid-column: 1 / 1;
+            grid-row: 1 / 2;
+        }
         &--title{
             font-size: $Header-Size;
             color: $GrayLigth-color;
             font-family: $Header-font;
+            @media only screen and (max-width: 1024px)  {  
+                font-size: 2.5rem;
+            } 
         }
         &--text{
             font-size: $Content-Size;
             color: $GrayLigth-color;
             font-family: $Content-font;
+            @media only screen and (max-width: 1024px)  {  
+                font-size: 0.9rem;
+            } 
         }
         &--button{
             background-color: $PinkDark-color;
@@ -97,93 +138,469 @@ $Content-Size:1rem;
             width: 300px;
             border-radius: 15px;
             box-shadow: 0px 0px 25px 5px #ff1ba7;
+            transition: all .35s ease;
+            outline: none;
+            &:hover, &:active{
+                background-color: white;
+                color: $Pink-color;
+                transition: background-color 1000ms linear;
+            }
             &icon{
                 padding: 0px 10px;
             }
+            @media only screen and (max-width: 1024px)  {  
+                display: none;
+                visibility: hidden;
+            } 
         }
     }
     &_image{
-        width: 50%;
+        grid-column: 9 / 12;
+        grid-row: 1 / 3;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media only screen and (max-width: 1024px)  {  
+            grid-column: 1 / 1;
+            grid-row: 2 / 2;
+        } 
         &--svg{
             position: absolute;
-            width: 600px;
+            width: 800px;
             z-index: 0;
+            @media only screen and (max-width: 1024px)  {  
+                width: 400px;
+            } 
         }
         &--texture{
             position: absolute;
-            width: 600px;
+            width: 800px;
             z-index: 3;
+            @media only screen and (max-width: 1024px)  {  
+                width: 400px;
+            } 
         }
         &--jiraffe{
-            width: 550px;
+            position:relative;
+            bottom: -30px;
+            width: 700px;
             z-index: 5;
+            @media only screen and (max-width: 1024px)  {  
+                width: 400px;
+                position: relative;
+                bottom: 0px;
+            } 
         }
     }
     
 }
 
+.dot{
+    background-color: $Pink-color;
+    height: 40px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 0px 14px ;
+    border-bottom: solid 3px;
+    border-bottom-color: $GrayDark-color;
+    &_green, &_black {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      &_green{
+        background-color: $Green-color;
+      }
+      &_black {
+        background-color: $GrayDark-color;
+      }
+}
+
 .about{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+    padding: 250px 170px 0px 170px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+    grid-template-rows:repeat(4, 150px);
+    @media only screen and (max-width: 1024px)  {  
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows:repeat(3, auto);
+        padding: 50px 50px 0px 50px;
+    } 
     &_content{
-        width: 40%;
+        grid-column: 1 / 6;
+        grid-row: 1 / 3;
+        @media only screen and (max-width: 1024px)  {  
+            grid-column: 1 / 1;
+            grid-row: 1 / 2;
+        } 
         &--title{
             font-size: $Header-Size;
             color: $Pink-color;
             font-family: $Header-font;
+            @media only screen and (max-width: 1024px)  {  
+                font-size:2.5rem;
+            } 
         }
         &--text{
             font-size: $Content-Size;
             color: $GrayDark-color;
             font-family: $Content-font;
+            @media only screen and (max-width: 1024px)  {  
+                font-size:0.9rem;
+            } 
         }
     }
     &_image{
-        width: 60%;
-        display: flex;
-        flex-direction: column;
+        grid-column: 6 / 12;
+        grid-row: 2 / 4 ;
+        @media only screen and (max-width: 1024px)  {  
+            grid-column: 1 / 1;
+            grid-row: 2 / 3;
+        } 
     }
     &_software{
-        width: auto;
-        height: 430px;
-        background-image: url("/content/PW_Title_SOFTWARE-01.jpg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        
+        width: 80%;
+        height: max-content;
+        background-color: white;
+        border-color: $GrayDark-color;
+        border-style: solid;
+        border-width: 4px;
+        border-radius: 20px;
+        @media only screen and (max-width: 1024px)  {  
+            width: 100%;
+        } 
         &--title{
             font-size: 3rem;
             color: $Pink-color;
             font-family: $Header-font;
+            text-align: center;
+            padding:20px 0px;
+            @media only screen and (max-width: 1024px)  {  
+                font-size: 2rem;
+            } 
+        }
+        &--list{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            justify-content: space-evenly;
+            list-style: none;
+            font-family: $Header-font;
+            font-size: 0.3rem;
+            text-align: center;
+            line-height: 0.7rem;
+            padding: 0px 30px;
+            
+        }
+        &--icon{
+            padding: 0px 5px;
+        }
+        &--svg{
+            height: 20px;
+            width: auto;
+            @media only screen and (max-width: 1024px)  {  
+                height: 30px;
         }
     }
+    }
     &_ability{
-        width: auto;
-        height: 250px;
-        background-image: url("/content/PW_Title_Aptitudes-01.jpg");
-        background-size:contain;
-        background-repeat: no-repeat;
-        position: relative;
+        width: 80%;
+        height: max-content;
+        background-color: white;
+        border-color: $GrayDark-color;
+        border-style: solid;
+        border-width: 4px;
+        border-radius: 20px;
+        position:relative;
         top: -30px;
-        left: 100px;
+        left: 200px;
+        @media only screen and (max-width: 1024px)  {  
+            width: 100%;
+            position:none;
+            top: auto;
+            left: auto;
+            margin: 30px 0px 0px 0px;
+        } 
+
         &--title{
             font-size: 2rem;
             color: $Pink-color;
             font-family: $Header-font;
+            text-align: center;
+            padding:20px 0px ;
         }
     }
     &_icons{
+        width: 40%;
         display: flex;
         flex-direction: row;
         list-style: none;
+        justify-content: space-between;
         &--icon{
-            
+            color: $GrayDark-color;
+            display: inline;
             &:hover{
                 color: $Pink-color;
             }
         }
     }
 }
+
+a:link{
+    text-decoration: none;
+    color: $GrayDark-color;
+}
+.card-header{
+    background-color: white;
+    padding: 0px 0px;
+}
+.card-body{
+    padding: 10px 5px 2px 25px;
+}
+
+
+.btn-link:hover,
+.btn-link:active,
+.btn-link:focus{
+    text-decoration: none;
+}
+
+.experience{
+    padding: 150px 170px 170px 170px;
+    background-color: $GrayLigth-color;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+    grid-template-rows:repeat(4, 150px);
+    @media only screen and (max-width: 1024px)  {  
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+    } 
+    
+
+    &_accordion {
+        color:$GrayDark-color;
+        cursor: pointer;
+        padding: 18px;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+        font-family: $Header-font;
+        background-color: white;
+
+
+        &--bold{
+            color: $Pink-color;
+            display: inline;
+            @media only screen and (max-width: 1024px)  {  
+                display: block;
+                line-height: 10px;
+                font-size: 0.8rem;
+                font-size: bold;
+            } 
+        }
+
+        &--black{
+            color: $GrayDark-color;
+            display: inline;
+            @media only screen and (max-width: 1024px)  {  
+                display: block;
+                font-size: 0.9rem;
+                line-height: 10px;
+
+            } 
+        }
+      }
+
+    &_content{
+        grid-column: 1 / 8;
+        grid-row: 1 / 3;
+        height: max-content;
+        background-color: white;
+        border-color: $GrayDark-color;
+        border-style: solid;
+        border-width: 4px;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        
+        &--title{
+            padding-left: 20px;
+            padding-top: 20px;
+            font-family: $Header-font;
+            font-size:$Subheader-Size;
+            color: $Pink-color;
+        }
+        &--subtitle{
+            font-family: $Header-font;
+            font-size: 0.8rem;
+        }
+        &--text{
+            font-family: $Content-font;
+            font-size: 0.85rem;
+            line-height: 1rem;
+            margin-left: 5px;
+        }
+    }
+    &_studies{
+        grid-column: 8 / 12;
+        grid-row: 2 / 4;
+        @media only screen and (max-width: 1024px)  { 
+            grid-column: 1 / 1;
+            grid-row: 2 / 3;
+        }
+        
+        &--title{
+            font-family: $Header-font;
+            font-size: $Subheader-Size;
+            color: $Pink-color;
+        }
+    }
+    &_item{
+        &--title{
+            font-family: $Header-font;
+            font-size: 0.9rem;
+            color: $GrayDark-color;
+        }
+        &--text{
+            font-family: $Content-font;
+            font-size: 0.8rem;
+            line-height: 0.1rem;
+            @media only screen and (max-width: 1024px)  { 
+                font-size: 0.9rem;
+                }
+            
+        }
+    }
+    &_list{
+        &--item{
+        list-style: none;
+        color: $GrayDark-color;
+        font-size: 0.8rem;
+        @media only screen and (max-width: 1024px)  { 
+        font-size: 0.7rem;
+        }
+    }
+        &--bold{
+            font-family: $Header-font;
+            display: inline;
+            font-size: 0.9rem;
+            @media only screen and (max-width: 1024px)  { 
+                font-size: 0.8rem;
+                }
+        }
+    }
+    }
+
+    .portfolio{
+        height: max-content;
+        background-color: $Pink-color;
+        padding: 100px 170px;
+        @media only screen and (max-width: 768px)  {  
+            padding: 40px 50px;
+            padding:50px;
+        } 
+        @media only screen and (max-width: 1024px)  {  
+            padding: 40px 50px;
+            padding:50px;
+        } 
+        
+        &_title{
+            color: $GrayLigth-color;
+            font-size: $Header-Size;
+            font-family: $Header-font;
+            @media only screen and (max-width: 1024px)  {  
+                font-size: 2.5rem;
+            } 
+            
+        }
+        
+        &_items{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &_item{
+            width: 30%;
+            padding-top: 20px;
+            @media only screen and (max-width: 768px)  {  
+                width: 100%;
+            } 
+            @media only screen and (max-width: 1024px) and (min-width: 768px)  {
+                width: 45%;
+            }
+            
+            &--image{
+                width: 100%;
+                height: 200px;
+                filter: grayscale(200%) brightness(0.4);;
+                border-radius: 20px;
+                object-fit: cover;
+                &:hover{
+                    filter: none;
+                    transition: 1s ease;
+                }
+            }
+            &--title{
+                font-family: $Header-font;
+                color: $GrayLigth-color;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                padding-top: 10px;
+                @media only screen and (max-width: 1024px) and (min-width: 768px)  {
+                    font-size: 1.2rem;
+                }
+                
+            }
+            &--text{
+                font-family: $Content-font;
+                color: $GrayLigth-color;
+                font-size: 0.8rem;
+                line-height: 1rem;
+            }
+        }
+        
+    }
+
+    .footer{
+        background-color: $GrayDark-color;
+        width: 100%;
+        height: 200px;
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &_text{
+            color: $GrayLigth-color;
+            font-family: $Header-font;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+            padding-top: 50px;
+            text-align: center;
+            @media only screen and (max-width: 1024px)  {  
+                letter-spacing: 5px;
+            } 
+
+        }
+        &_icons{
+            display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-between;
+        &--icon{
+                color: white;
+                padding: 20px 20px;  
+                font-size: 0.8rem;              
+                &:hover{
+                    color: $Pink-color;
+                }
+                
+            }
+        }
+    }

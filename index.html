@@ -5,43 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/cei1qpc.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-<section class="nav">
+    <!--
+<header class="header">
     <nav class="navbar">
         <ul class="navbar_items">
             <li class="navbar_items--item">Sobre Mi</li>
-            <li class="navbar_items--item">Experiencia Educación</li>
-            <li class="navbar_items--item">Portafolio</li>
-            <li class="navbar_items--item">contacto</li>
+            <li class="navbar_items--item">Experiencia/Estudios</li>
+            <li class="navbar_items--item">Portfolio</li>
+            <li class="navbar_items--item">Contacto</li>
         </ul>
     </nav>
-</section>
+</header>
+-->
     <section class="banner">
         <div class="banner_content">
-            <h1 class="banner_content--title">Hola,</br> Soy Laura</br>Camila.</h1>
-            <p class="banner_content--text">Soy Diseñadora gráfica con Máster en Diseño Gráfico Digital y +5 años de experiencia como diseñadora
+            <h1 class="banner_content--title" data-aos="fade-right" data-aos-duration="2800">Hola,</br> Soy Laura</br>Camila.</h1>
+            <p class="banner_content--text" data-aos="fade-right" data-aos-duration="2800">Soy Diseñadora gráfica con Máster en Diseño Gráfico Digital y +5 años de experiencia como diseñadora
             gráfica realizando principalmente piezas gráficas para BTL. Actualmente busco enfocarme en el diseño
             y desarrollo web front-end.</p>
             
-            <button class="banner_content--button" type=submit onclick=" window.open('./content/CV_LauraCamilaGómez.pdf'); return true;">
+            <button class="banner_content--button" type=submit onclick=" window.open('./content/CV_LauraCamilaGómez.pdf'); return true;" data-aos="fade-right" data-aos-duration="2800">
                 <i class="bi bi-download banner_content--buttonicon"></i>Descargar CV</button>
         </div>
         <div class="banner_image">
             <img class="banner_image--jiraffe" src="content/jirafa.png" alt="">
-            <img class="banner_image--texture" src="content/Banner_Pattern.svg" alt="">
-            <img class="banner_image--svg" src="content/Banner_Circle.svg" alt="">
+            <img class="banner_image--texture" src="content/Banner_Pattern.svg" alt="" data-aos="fade-left" data-aos-duration="2800">
+            <img class="banner_image--svg" src="content/Banner_Circle.svg" alt="" data-aos="fade-left" data-aos-duration="2800">
         </div>
+        <div class="mouse"></div>
     </section>
 
+
 <section class="about">
-    <div class="about_content">
+    <div class="about_content" data-aos="fade-right" data-aos-duration="2800">
         <h2 class="about_content--title">Sobre Mi</h2>
-        <p class="about_content--text">¡Hola! Soy Laura Camila Gómez, diseñadora gráfica con 5 años de experiencia realizando piezas gráficas estáticas y animadas para redes sociales, mailings, edición de videos, entre otros. Actualmente busco desarrollarme como diseñadora  front-end,
+        <p class="about_content--text"><b>¡Hola! Soy Laura Camila Gómez</b>, diseñadora gráfica con 5 años de experiencia realizando piezas gráficas estáticas y animadas para redes sociales, mailings, edición de videos, entre otros. Actualmente busco desarrollarme como diseñadora  front-end,
             he realizado cursos de desarrollo web, JavaScript,  UX/UI y actualmente me encuentro cursando React JS.</p>
             <ul class="about_icons">
                     <li><a class="about_icons--icon" href="https://www.facebook.com/zombiagomez/"><i class="bi bi-facebook"></i></a></li>
@@ -51,39 +56,225 @@
             </ul>
     </div>
     <div class="about_image">
-        <div class="about_software">
+        <div class="about_software" data-aos="fade-left" data-aos-duration="2800">
+            <div class="dot">
+                <span class="dot_green"></span>
+                <span class="dot_black"></span>
+                <span class="dot_black"></span>
+            </div>
             <h2 class="about_software--title">Software</h2>
-            <ul>
-                <li>Adobe Illustrator</li>
-                <li>Adobe InDesign</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe</li>
-                <li>Adobe</li>
-                <li>Adobe</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>Google Web Designer</li>
-                <li>InVision</li>
-                <li>Wordpress</li>
+            <ul class="about_software--list">
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/adobe-illustrator.svg" alt=""><p>Adobe</br>Illustrator</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/indesign.svg" alt=""><p>Adobe</br>InDesign</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/photoshop.svg" alt=""><p>Adobe</br>Photoshop</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/after-effects.svg" alt=""><p>Adobe</br>After Effects</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/premiere.svg" alt=""><p>Adobe</br>Premiere</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/experience.svg" alt=""><p>Adobe XD</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/Git.svg" alt=""><p>Git</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/github-sign.svg" alt=""><p>GitHub</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/WebDesigner.svg" alt=""><p>Google</br>Web Designer</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/invision_logo_icon_145161.svg" alt=""><p>InVision</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Sofware/wordpress.svg"><p>Wordpress</p></li>
             </ul>
         </div>
-        <div class="about_ability">
+        <div class="about_ability" data-aos="fade-left" data-aos-duration="2800">
+            <div class="dot">
+                <span class="dot_green"></span>
+                <span class="dot_black"></span>
+                <span class="dot_black"></span>
+            </div>
             <h2 class="about_ability--title">Aptitudes</h2>
-            <ul>
-                <li>HTML</li>
-                <li>SCSS</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Bootstrap</li>
-                <li>Diseño web</li>
-                <li>UX/UI</li>
+            <ul class="about_software--list">
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/html.svg" alt=""><p>HTML</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/sass.svg" alt=""><p>SCSS</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/css.svg" alt=""><p>CSS</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/js.svg" alt=""><p>JavaScript</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/bootstrap.svg" alt=""><p>Bootstrap</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/dise;oweb.svg" alt=""><p>Diseño web</p></li>
+                <li class="about_software--icon"><img class="about_software--svg" src="./content/Aptitudes/uxui.svg" alt=""><p>UX/UI</p></li>
             </ul>
         </div>
     </div>
+</section>
+<section class="experience">
+    <div class="experience_content" data-aos="fade-right" data-aos-duration="2800">
+        <div class="dot">
+            <span class="dot_green"></span>
+            <span class="dot_black"></span>
+            <span class="dot_black"></span>
+        </div>
+        <h2 class="experience_content--title">Experiencia</h2>
+        <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link experience_accordion" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <p class="experience_accordion--black">Buentipo Anchor</p>
+                    <p class="experience_accordion--black"> | 2019 – Actual</p>
+                    <p class="experience_accordion--bold"> | Diseñadora Gráfica </p>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                        <p class="experience_content--text"> Diseño de piezas gráficas digitales estáticas y animadas (post redes sociales, mailings, papelería), 
+                           edición de videos,artes finales,<b>Clientes: Tugó, Cerveza SOL, Despacio, Dominique, Avantel, Lotería de Medellín, PIP (lozanoblanco), Previsora, Copiloto.</b>
+                        </p>
+                    </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link experience_accordion" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                      <p class="experience_accordion--black">Peoplepass</p>
+                      <p class="experience_accordion--black"> | 2017-2019</p>
+                      <p class="experience_accordion--bold"> | Diseñadora Gráfica </p>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                          <p class="experience_content--text">Diseño de piezas gráficas digitales estáticas y animadas (post redes sociales, mailings, revista digital, papelería),
+                              administración de página web, diseño y propuestas para portales web, actualización de HTML y CSS de los portales web,
+                            contacto y seguimiento de proveedores de impresión.
+                          </p>
+                      </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link experience_accordion" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      <p class="experience_accordion--black">Good To Eat</p>
+                      <p class="experience_accordion--black"> | Jul 2021 – Sept 2021</p>
+                      <p class="experience_accordion--bold"> | Freelance </p>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                            <p class="experience_content--text">Desarrollo de página web con HTML, SCSS, CSS.</p>
+                      </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link experience_accordion" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                      <p class="experience_accordion--black">Jimmy Sarmiento</p>
+                      <p class="experience_accordion--black"> | Abr 2020 – Abr 2021</p>
+                      <p class="experience_accordion--bold"> | Freelance </p>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                  <div class="card-body">
+                            <p class="experience_content--text">Creación de Marca,diseño de piezas digitales estáticas y animada,
+                                diseño de Key Visuals para eventos.
+                            </p>
+                      </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link experience_accordion" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                      <p class="experience_accordion--black">IBFS</p>
+                      <p class="experience_accordion--black"> | Mar 2019 – Jul 2019</p>
+                      <p class="experience_accordion--bold"> | Freelance </p>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                  <div class="card-body">
+                          <p class="experience_content--text">Creación de contenido para redes sociales,diseño de piezas graficas digitales estáticas y animadas (Post redes, mailings, papelería),
+                           administración de página web, diseño de Landing pages con wordpress y DIVI.
+                          </p>
+                      </div>
+                </div>
+              </div>
+          </div>
 
+    </div>
+    <div class="experience_studies" data-aos="fade-left" data-aos-duration="2800">
+        <h2 class="experience_studies--title">Estudios</h2>
+        <div class="experience_item">
+            <h4 class="experience_item--title">Máster en Diseño Gráfico Digital</h4>
+            <p class="experience_item--text">UNIR</p>
+            <p class="experience_item--text">Universidad Internacional de la Rioja</p>
+            <p class="experience_item--text">2018 - 2019</p>
+        </div>
+        <div class="experience_item">
+            <h4 class="experience_item--title">Diseño Gráfico</h4>
+            <p class="experience_item--text">IUDC </p>
+            <p class="experience_item--text">Institución Universitaria de Colombia</p>
+            <p class="experience_item--text">2013 - 2016</p>
+        </div>
+        <h2 class="experience_studies--title">Cursos</h2>
+        <ul class="experience_list">
+                <li class="experience_list--item"><p class="experience_list--bold">React JS</p> | En curso | Coderhouse</li>
+                <li class="experience_list--item"><p class="experience_list--bold">Photoshop para diseño web</p>| 2021| Domestika</li>
+                <li class="experience_list--item"><p class="experience_list--bold">Diseño UX-UI</p> | 2021 | Coderhouse</li>
+                <li class="experience_list--item"><p class="experience_list--bold">JavaScript</p> | 2021 | Coderhouse</li> 
+                <li class="experience_list--item"><p class="experience_list--bold">UX: al infinito...¡y más allá!</p> | 2021 | Future_is</li>
+                <li class="experience_list--item"><p class="experience_list--bold">Desarrollo Web</p> | 2021 | Coderhouse</li>
+        </ul>
+    </div>
+</section>
+<section class="portfolio">
+    <h3 class="portfolio_title">Portafolio</h3>
+    <div class="portfolio_items">
+    <div class="portfolio_item" data-aos="fade-up" data-aos-duration="2800">
+        <img class="portfolio_item--image" src="./content/portafolio/Inicio.png" alt="">
+        <h4 class="portfolio_item--title">Adopta un amigo </h4>
+        <p class="portfolio_item--text">Proyecto final para curso de Desarrollo Web.</p>
+    </div>
+    <div class="portfolio_item" data-aos="fade-up" data-aos-duration="2800">
+        <img class="portfolio_item--image" src="./content/portafolio/ColombianBeer.PNG" alt="">
+        <h4 class="portfolio_item--title">ColombianBeer</h4>
+        <p class="portfolio_item--text">Proyecto final para curso de JavaScript.</p>
+    </div>
+    <div class="portfolio_item" data-aos="fade-up" data-aos-duration="2800">
+        <img class="portfolio_item--image" src="./content/portafolio/Goodtoeat.PNG" alt="">
+        <h4 class="portfolio_item--title">GoodtoEat</h4>
+        <p class="portfolio_item--text">Desarrollo de página web.</p>
+    </div>
+    <div class="portfolio_item" data-aos="fade-up" data-aos-duration="2800">
+        <img class="portfolio_item--image" src="./content/portafolio/ProyectoFinal_UX_UI_mvp.jpg" alt="">
+        <h4 class="portfolio_item--title">Coach Finder</h4>
+        <p class="portfolio_item--text">Proyecto final para curso de Diseño UI/UX.</p>
+    </div>
+    <div class="portfolio_item" data-aos="fade-up" data-aos-duration="2800">
+        <img class="portfolio_item--image" src="./content/portafolio/Jimmy.gif" alt="">
+        <h4 class="portfolio_item--title">JIMMY SARMIENTO</h4>
+        <p class="portfolio_item--text">Piezas gráficas digitales estáticas y animadas.</p>
+    </div>
+    <div class="portfolio_item" data-aos="fade-up" data-aos-duration="2800">
+        <img class="portfolio_item--image" src="./content/portafolio/previsora.png" alt="">
+        <h4 class="portfolio_item--title">Previsora</h4>
+        <p class="portfolio_item--text">Piezas para redes sociales.</p>
+    </div>
+</div>
 </section>
 
+<footer class="footer">
+    <h3 class="footer_text"> Laura Camila Gómez Quintero</h3>
+    <ul class="footer_icons">
+        <li><a class="footer_icons--icon" href="https://www.facebook.com/zombiagomez/"><i class="bi bi-facebook"></i></a></li>
+        <li><a class="footer_icons--icon" href="https://www.instagram.com/zombiagomez/"><i class="bi bi-instagram"></i></a></li>
+        <li><a class="footer_icons--icon" href="https://www.linkedin.com/in/lauracamilag/"><i class="bi bi-linkedin"></i></a></li>
+        <li><a class="footer_icons--icon" href="https://github.com/camilazombia"><i class="bi bi-github"></i></a></li>
+</ul>
+</footer>
+<script src="./js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>
